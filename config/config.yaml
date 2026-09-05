@@ -1,0 +1,29 @@
+project:
+  name: "Urban Service Reliability Analytics and BI"
+  implementation: "NYC 311 Service Operations Intelligence"
+
+source:
+  provider: "NYC Open Data"
+  dataset_name: "311 Service Requests from 2020 to Present"
+  dataset_id: "erm2-nwe9"
+
+  api_url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json"
+  metadata_url: "https://data.cityofnewyork.us/api/views/erm2-nwe9"
+
+  timezone: "America/New_York"
+
+ingestion:
+  default_page_size: 50000
+
+scope:
+  geography: "NYC-wide"
+
+  created_start: "2026-01-01T00:00:00.000"
+  created_end_exclusive: "2026-08-30T00:00:00.000"
+
+  scope_label: "2026 YTD through 2026-08-29"
+
+  rationale: >
+    August 30 is excluded because source profiling showed only
+    1,121 requests and a maximum created timestamp of 02:31:07,
+    indicating an incomplete publication day.
