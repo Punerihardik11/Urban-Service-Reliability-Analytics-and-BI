@@ -1,0 +1,71 @@
+{
+    "privileges": [],
+    "dataRoles": [
+        {
+            "displayName": "ZIP",
+            "name": "zip",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Requests",
+            "name": "requests",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Current Backlog",
+            "name": "currentBacklog",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Backlog Rate",
+            "name": "backlogRate",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Median Backlog Age",
+            "name": "medianBacklogAge",
+            "kind": "Measure"
+        }
+    ],
+    "dataViewMappings": [
+        {
+            "categorical": {
+                "categories": {
+                    "for": {
+                        "in": "zip"
+                    },
+                    "dataReductionAlgorithm": {
+                        "top": {
+                            "count": 500
+                        }
+                    }
+                },
+                "values": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "requests"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "currentBacklog"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "backlogRate"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "medianBacklogAge"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "objects": {}
+}

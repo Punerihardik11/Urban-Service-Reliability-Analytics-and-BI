@@ -1,0 +1,96 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Workflow ID",
+      "name": "workflowId",
+      "kind": "Grouping"
+    },
+    {
+      "displayName": "Agency",
+      "name": "agency",
+      "kind": "Grouping"
+    },
+    {
+      "displayName": "Service",
+      "name": "service",
+      "kind": "Grouping"
+    },
+    {
+      "displayName": "Current Backlog",
+      "name": "currentBacklog",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "Backlog Rate",
+      "name": "backlogRate",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "Median Backlog Age",
+      "name": "medianBacklogAge",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "P90 Backlog Age",
+      "name": "p90BacklogAge",
+      "kind": "Measure"
+    }
+  ],
+  "objects": {},
+  "dataViewMappings": [
+    {
+      "categorical": {
+        "categories": {
+          "select": [
+            {
+              "for": {
+                "in": "workflowId"
+              }
+            },
+            {
+              "for": {
+                "in": "agency"
+              }
+            },
+            {
+              "for": {
+                "in": "service"
+              }
+            }
+          ],
+          "dataReductionAlgorithm": {
+            "top": {
+              "count": 1000
+            }
+          }
+        },
+        "values": {
+          "select": [
+            {
+              "bind": {
+                "to": "currentBacklog"
+              }
+            },
+            {
+              "bind": {
+                "to": "backlogRate"
+              }
+            },
+            {
+              "bind": {
+                "to": "medianBacklogAge"
+              }
+            },
+            {
+              "bind": {
+                "to": "p90BacklogAge"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "supportsMultiVisualSelection": true,
+  "privileges": []
+}

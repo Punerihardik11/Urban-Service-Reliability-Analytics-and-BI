@@ -1,0 +1,25 @@
+{
+  "visual": {
+    "name": "operationsAttentionVisual",
+    "displayName": "operationsAttentionVisual",
+    "guid": "operationsAttentionVisual39D4AE0560114B3E85E88B9D266E8A97",
+    "visualClassName": "Visual",
+    "version": "1.0.0.4",
+    "description": "Operations attention visual for NYC 311 service operations intelligence.",
+    "supportUrl": "https://github.com/Punerihardik11",
+    "gitHubUrl": "https://github.com/Punerihardik11"
+  },
+  "apiVersion": "5.11.1",
+  "author": {
+    "name": "Hardik Waghmare",
+    "email": "punerihardik@gmail.com"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "externalJS": null,
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "dependencies": null,
+  "stringResources": []
+}

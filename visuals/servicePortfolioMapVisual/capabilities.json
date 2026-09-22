@@ -1,0 +1,116 @@
+{
+    "privileges": [],
+    "dataRoles": [
+        {
+            "displayName": "Workflow ID",
+            "name": "workflowId",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Agency",
+            "name": "agency",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Service",
+            "name": "service",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Total Requests",
+            "name": "requests",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Current Backlog",
+            "name": "currentBacklog",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Backlog Rate",
+            "name": "backlogRate",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Median Resolution Hours",
+            "name": "medianResolution",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "P90 Resolution Hours",
+            "name": "p90Resolution",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Median Backlog Age",
+            "name": "medianBacklogAge",
+            "kind": "Measure"
+        }
+    ],
+    "dataViewMappings": [
+        {
+            "categorical": {
+                "categories": {
+                    "select": [
+                        {
+                            "for": {
+                                "in": "workflowId"
+                            }
+                        },
+                        {
+                            "for": {
+                                "in": "agency"
+                            }
+                        },
+                        {
+                            "for": {
+                                "in": "service"
+                            }
+                        }
+                    ],
+                    "dataReductionAlgorithm": {
+                        "top": {
+                            "count": 500
+                        }
+                    }
+                },
+                "values": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "requests"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "currentBacklog"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "backlogRate"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "medianResolution"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "p90Resolution"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "medianBacklogAge"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "supportsMultiVisualSelection": true,
+    "objects": {}
+}

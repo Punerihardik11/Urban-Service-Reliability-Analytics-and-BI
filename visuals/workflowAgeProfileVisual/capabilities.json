@@ -1,0 +1,79 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Workflow ID",
+            "name": "workflowId",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Agency",
+            "name": "agency",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Service",
+            "name": "service",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Current Backlog",
+            "name": "currentBacklog",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Median Backlog Age",
+            "name": "medianBacklogAge",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Backlog 30+ Share",
+            "name": "backlog30PlusShare",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Backlog 60+ Share",
+            "name": "backlog60PlusShare",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Backlog 90+ Share",
+            "name": "backlog90PlusShare",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Backlog 180+ Share",
+            "name": "backlog180PlusShare",
+            "kind": "Measure"
+        }
+    ],
+    "objects": {},
+    "dataViewMappings": [
+        {
+            "categorical": {
+                "categories": {
+                    "select": [
+                        { "for": { "in": "workflowId" } },
+                        { "for": { "in": "agency" } },
+                        { "for": { "in": "service" } }
+                    ],
+                    "dataReductionAlgorithm": {
+                        "top": {
+                            "count": 500
+                        }
+                    }
+                },
+                "values": {
+                    "select": [
+                        { "bind": { "to": "currentBacklog" } },
+                        { "bind": { "to": "medianBacklogAge" } },
+                        { "bind": { "to": "backlog30PlusShare" } },
+                        { "bind": { "to": "backlog60PlusShare" } },
+                        { "bind": { "to": "backlog90PlusShare" } },
+                        { "bind": { "to": "backlog180PlusShare" } }
+                    ]
+                }
+            }
+        }
+    ],
+    "privileges": []
+}

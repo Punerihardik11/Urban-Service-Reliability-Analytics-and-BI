@@ -2,43 +2,47 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
-.ipynb_checkpoints/
 
-# Virtual environments
+# Virtual environment
 .venv/
-venv/
-env/
 
 # Environment secrets
 .env
-.env.*
-!.env.example
 
-# Node / frontend
-node_modules/
-dist/
-build/
-
-# IDE / editor / OS noise
+# IDE / OS
 .vscode/
-.idea/
 .DS_Store
 Thumbs.db
-*.swp
-*.swo
 
-# Project-generated data
-data/bronze/*
+# Raw / processed datasets
+data/bronze/raw/*
 data/silver/*
 data/gold/*
-outputs/*
 
-# Keep required directory placeholders
-!data/bronze/.gitkeep
+# Keep directories
+!data/bronze/raw/.gitkeep
 !data/silver/.gitkeep
 !data/gold/.gitkeep
-!outputs/.gitkeep
+
+# Notebook checkpoints
+.ipynb_checkpoints/
 
 # Temporary files
 *.tmp
 *.log
+# Local datasets / generated analysis outputs
+data/
+outputs/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node / visual development
+node_modules/
+**/node_modules/
+
+# Build artifacts
+dist/
+**/dist/

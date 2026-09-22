@@ -1,0 +1,80 @@
+{
+  "privileges": [],
+  "dataRoles": [
+    {
+      "name": "createdDate",
+      "displayName": "Created Date",
+      "kind": "Grouping"
+    },
+    {
+      "name": "workflowId",
+      "displayName": "Workflow ID",
+      "kind": "Grouping"
+    },
+    {
+      "name": "agency",
+      "displayName": "Agency",
+      "kind": "Grouping"
+    },
+    {
+      "name": "service",
+      "displayName": "Service",
+      "kind": "Grouping"
+    },
+    {
+      "name": "requestCount",
+      "displayName": "Request Count",
+      "kind": "Measure"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "createdDate": { "max": 1 },
+          "workflowId": { "max": 1 },
+          "agency": { "max": 1 },
+          "service": { "max": 1 },
+          "requestCount": { "max": 1 }
+        }
+      ],
+      "table": {
+        "rows": {
+          "select": [
+            {
+              "for": {
+                "in": "createdDate"
+              }
+            },
+            {
+              "for": {
+                "in": "workflowId"
+              }
+            },
+            {
+              "for": {
+                "in": "agency"
+              }
+            },
+            {
+              "for": {
+                "in": "service"
+              }
+            },
+            {
+              "for": {
+                "in": "requestCount"
+              }
+            }
+          ],
+          "dataReductionAlgorithm": {
+            "window": {
+              "count": 30000
+            }
+          }
+        }
+      }
+    }
+  ],
+  "objects": {}
+}

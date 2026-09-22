@@ -1,0 +1,52 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Current Backlog",
+      "name": "totalBacklog",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "Median Backlog Age",
+      "name": "medianAge",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "Backlog 30+ Days",
+      "name": "backlog30Plus",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "Backlog 60+ Days",
+      "name": "backlog60Plus",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "Backlog 90+ Days",
+      "name": "backlog90Plus",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "Backlog 180+ Days",
+      "name": "backlog180Plus",
+      "kind": "Measure"
+    }
+  ],
+  "objects": {},
+  "dataViewMappings": [
+    {
+      "categorical": {
+        "values": {
+          "select": [
+            { "bind": { "to": "totalBacklog" } },
+            { "bind": { "to": "medianAge" } },
+            { "bind": { "to": "backlog30Plus" } },
+            { "bind": { "to": "backlog60Plus" } },
+            { "bind": { "to": "backlog90Plus" } },
+            { "bind": { "to": "backlog180Plus" } }
+          ]
+        }
+      }
+    }
+  ],
+  "privileges": []
+}

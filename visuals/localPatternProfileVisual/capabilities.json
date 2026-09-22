@@ -1,0 +1,105 @@
+{
+    "privileges": [],
+    "dataRoles": [
+        {
+            "displayName": "ZIP",
+            "name": "zip",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Workflow ID",
+            "name": "workflowId",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Agency",
+            "name": "agency",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Service",
+            "name": "service",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Geographic Requests",
+            "name": "requests",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Local Active Days",
+            "name": "activeDays",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Local Requests per Active Day",
+            "name": "requestsPerActiveDay",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Local Top-Day Share",
+            "name": "topDayShare",
+            "kind": "Measure"
+        }
+    ],
+    "dataViewMappings": [
+        {
+            "categorical": {
+                "categories": {
+                    "select": [
+                        {
+                            "for": {
+                                "in": "zip"
+                            }
+                        },
+                        {
+                            "for": {
+                                "in": "workflowId"
+                            }
+                        },
+                        {
+                            "for": {
+                                "in": "agency"
+                            }
+                        },
+                        {
+                            "for": {
+                                "in": "service"
+                            }
+                        }
+                    ],
+                    "dataReductionAlgorithm": {
+                        "top": {
+                            "count": 3000
+                        }
+                    }
+                },
+                "values": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "requests"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "activeDays"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "requestsPerActiveDay"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "topDayShare"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "objects": {}
+}

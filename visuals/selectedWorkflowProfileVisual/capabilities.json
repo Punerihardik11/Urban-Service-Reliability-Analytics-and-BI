@@ -1,0 +1,85 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Workflow ID",
+            "name": "workflowId",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Agency",
+            "name": "agency",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Service",
+            "name": "service",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Lifecycle Interpretation",
+            "name": "lifecycleInterpretation",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Current Backlog",
+            "name": "currentBacklog",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Backlog Rate",
+            "name": "backlogRate",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Median Backlog Age",
+            "name": "medianBacklogAge",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "P90 Backlog Age",
+            "name": "p90BacklogAge",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Median Resolution Hours",
+            "name": "medianResolutionHours",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "P90 Resolution Hours",
+            "name": "p90ResolutionHours",
+            "kind": "Measure"
+        }
+    ],
+    "objects": {},
+    "dataViewMappings": [
+        {
+            "categorical": {
+                "categories": {
+                    "select": [
+                        { "for": { "in": "workflowId" } },
+                        { "for": { "in": "agency" } },
+                        { "for": { "in": "service" } },
+                        { "for": { "in": "lifecycleInterpretation" } }
+                    ],
+                    "dataReductionAlgorithm": {
+                        "top": {
+                            "count": 500
+                        }
+                    }
+                },
+                "values": {
+                    "select": [
+                        { "bind": { "to": "currentBacklog" } },
+                        { "bind": { "to": "backlogRate" } },
+                        { "bind": { "to": "medianBacklogAge" } },
+                        { "bind": { "to": "p90BacklogAge" } },
+                        { "bind": { "to": "medianResolutionHours" } },
+                        { "bind": { "to": "p90ResolutionHours" } }
+                    ]
+                }
+            }
+        }
+    ],
+    "privileges": []
+}
